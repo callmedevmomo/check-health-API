@@ -3,6 +3,10 @@ import request from "request";
 
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send("hello home!");
+});
+
 app.get("/:something", (req, res) => {
   const { url } = req;
   var momo = "";
@@ -17,7 +21,7 @@ app.get("/:something", (req, res) => {
       if (momoStatus <= 445) {
         res.json(true);
         console.log("✅ TRUE ");
-      } else if (momoStauts === 521) {
+      } else if (momoStatus === 521) {
         res.json(false);
         console.log("✅ FALSE ");
       } else {
